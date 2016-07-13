@@ -1,7 +1,9 @@
 <?php
   
-  define("DT_LASTTIME",time());  
-  define("DROPBOX_ACCESSTOKEN",""); //add your token
+  define("DT_LASTTIME",time()); 
+  
+  // Add your token 
+  define("DROPBOX_ACCESSTOKEN",""); 
   
   // Connection settings database
   define("DB_NAME","");
@@ -13,8 +15,17 @@
   define("TABLE_QUEUE","table_bot_queue");
   
   $images_dir = MAINPUTH . "images";
+  
   $images_rdir = MAINPUTH . "images_resized";
+  
+  /**
+  * 
+  * Can use string parameters separated by "," 
+  * "image/jpeg,image/png,image/gif" 
+  * 
+  */  
   $images_types = "image/jpeg";
+  
   $images_sizes = "640x640";
   
   $classes_dir = MAINPUTH . "lib/classes/";
