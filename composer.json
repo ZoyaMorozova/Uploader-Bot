@@ -1,0 +1,16 @@
+{
+    "name": "ZoyaMorozova/Uploader-Bot",
+    "description": "The application for Resize scheduled images and Upload resized image to cloud storage.",
+    "homepage": "https://github.com/ZoyaMorozova/Uploader-Bot",
+    "authors": [
+        {
+            "name": "ZoyaMorozova",
+            "email": "z.morozova@gmail.com"
+        }
+    ],
+    
+    "require": {
+        "php": ">= 5.3",
+        "dropbox/dropbox-sdk": "1.1.*"
+    }
+}
