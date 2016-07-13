@@ -35,9 +35,4 @@ The application for Resize scheduled images and Upload resized image to cloud st
 > $ bot status
 
 ### Rescheduler
-<<<<<<< HEAD
 $ bot retry [-n &lt;count&gt;]
-=======
-$ bot retry [-n &lt;count&gt;]
-
->>>>>>> origin/master
