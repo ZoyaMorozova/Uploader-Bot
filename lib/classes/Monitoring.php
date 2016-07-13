@@ -7,7 +7,7 @@
             $resstr = "Images Processor Bot \n";
             $resstr .= "Queue Count \n";
   
-            $row = DataBase::mysqlQuery(TABLE_QUEUE,array("status" => "'resize'"));
+            $row = DataBase::mysqlQuery(TABLE_QUEUE,array("status" => "'resized'"));
             $resstr .= "resize " . count($row) . " \n";
   
             $row = DataBase::mysqlQuery(TABLE_QUEUE,array("status" => "'upload'"));

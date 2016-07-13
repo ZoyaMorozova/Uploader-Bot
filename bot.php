@@ -48,7 +48,12 @@
                // **** Resizer ****  
                
                $objResizer = new Resizer($images_dir, $images_rdir, $images_sizes, $limit_par);        
-               $objResizer->allImgResize(); 
+               if(!$objResizer->allImgResize())
+               {
+                  $objScheduler = new Scheduler($images_dir, $images_types, $images_sizes);        
+                  $objScheduler->createQueue(); 
+                  $objResizer->allImgResize();
+               } 
   
                break;
            
@@ -66,10 +71,10 @@
                {
                    foreach($row as $k => $v)
                    {
-                       $namef = $images_rdir . $v['fname'];
+                       $namef = $images_rdir . '/' . $v['fname'];
                        
                        if(!file_exists($namef)){
-                           $namef = $images_dir . $v['fname'];
+                           $namef = $images_dir . '/' . $v['fname'];
                        }
                        
                        if(file_exists($namef)){
@@ -102,7 +107,7 @@
        // **** Rescheduler ****
        
        Rescheduler::imgRescheduler();
-       Rescheduler::allImgResizeCleaner($images_dir);
+       Rescheduler::allImgResizeCleaner($images_dir, $images_rdir);
        
    }
 

@@ -18,6 +18,8 @@
       public function allImgResize()
       {
           
+          if(!is_dir($this->resize_folder)) mkdir($this->resize_folder, 0755);
+          
           //////////////////
           
           $limit_par = ""; if($this->img_count_resize) $limit_par = " LIMIT " . $this->img_count_resize;
