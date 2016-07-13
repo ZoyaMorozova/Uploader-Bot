@@ -8,7 +8,7 @@ The application for Resize scheduled images and Upload resized image to cloud st
 - edit ./lib/config.php
 - create Dropbox [application](https://www.dropbox.com/developers/apps/)
 - create on Dropbox folder "uploader"
-- generate on Dropbox Token and edit constant TABLE_QUEUE in ./lib/config.php
+- generate on Dropbox Token and edit constant DROPBOX_ACCESSTOKEN in ./lib/config.php
 
 ## Usage
 - run bot
