@@ -94,20 +94,31 @@
                }
                
                break;
+               
+               case "status":
+                  
+                  // **** Monitoring ****
+       
+                  echo Monitoring::getReport(); 
                     
+               break;
+               
+               case "retry":
+               
+                  $limit_par = 0; if(isset($argv[3])) $limit_par = intval($argv[3]);
+                  
+                  // **** Rescheduler ****
+       
+                  Rescheduler::imgRescheduler($limit_par);
+                  
+                  
+               break;
+                  
            default:
                break;
        }
        
-       // **** Monitoring ****
-       
-       echo Monitoring::getReport();
-  
-       
-       // **** Rescheduler ****
-       
-       Rescheduler::imgRescheduler();
-       Rescheduler::allImgResizeCleaner($images_dir, $images_rdir);
+       Rescheduler::allImgResizeCleaner($images_dir, $images_rdir);       
        
    }
 

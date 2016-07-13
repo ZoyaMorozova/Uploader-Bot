@@ -2,9 +2,10 @@
   
   class Rescheduler
   {
-        public static function imgRescheduler()
+        public static function imgRescheduler($img_count)
         {
-            DataBase::mysqlUpdate(TABLE_QUEUE, array("status" => "resize"), " WHERE status = 'failed'");    
+            $limit_par = ""; if(isset($img_count)) $limit_par = " LIMIT " . intval($img_count); 
+            DataBase::mysqlUpdate(TABLE_QUEUE, array("status" => "resize"), " WHERE status = 'failed'" . $limit_par);    
         }
         
         public static function allImgResizeCleaner($folder, $folder_tmp)
